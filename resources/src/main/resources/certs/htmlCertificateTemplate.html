@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      th:with="ipfsUrl='https://ipfs.bevis.sg/ipfs/'">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bevis certifacate</title>
+    <style media="all" rel="stylesheet">
+        /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+        /**
+         * 1. Set default font family to sans-serif.
+         * 2. Prevent iOS and IE text size adjust after device orientation change,
+         *    without disabling user zoom.
+         */
+
+        html {
+            font-family: sans-serif; /* 1 */
+            -ms-text-size-adjust: 100%; /* 2 */
+            -webkit-text-size-adjust: 100%; /* 2 */
+        }
+
+        /**
+         * Remove default margin.
+         */
+
+        body {
+            margin: 0;
+        }
+
+        /* HTML5 display definitions
+             ========================================================================== */
+
+        /**
+         * Correct `block` display not defined for any HTML5 element in IE 8/9.
+         * Correct `block` display not defined for `details` or `summary` in IE 10/11
+         * and Firefox.
+         * Correct `block` display not defined for `main` in IE 11.
+         */
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        menu,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+
+        /**
+         * 1. Correct `inline-block` display not defined in IE 8/9.
+         * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+         */
+
+        audio,
+        canvas,
+        progress,
+        video {
+            display: inline-block; /* 1 */
+            vertical-align: baseline; /* 2 */
+        }
+
+        /**
+         * Prevent modern browsers from displaying `audio` without controls.
+         * Remove excess height in iOS 5 devices.
+         */
+
+        audio:not([controls]) {
+            display: none;
+            height: 0;
+        }
+
+        /**
+         * Address `[hidden]` styling not present in IE 8/9/10.
+         * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+         */
+
+        [hidden],
+        template {
+            display: none;
+        }
+
+        /* Links
+             ========================================================================== */
+
+        /**
+         * Remove the gray background color from active links in IE 10.
+         */
+
+        a {
+            background-color: transparent;
+        }
+
+        /**
+         * Improve readability of focused elements when they are also in an
+         * active/hover state.
+         */
+
+        a:active,
+        a:hover {
+            outline: 0;
+        }
+
+        /* Text-level semantics
+             ========================================================================== */
+
+        /**
+         * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+         */
+
+        abbr[title] {
+            border-bottom: 1px dotted;
+        }
+
+        /**
+         * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+         */
+
+        b,
+        strong {
+            font-weight: bold;
+        }
+
+        /**
+         * Address styling not present in Safari and Chrome.
+         */
+
+        dfn {
+            font-style: italic;
+        }
+
+        /**
+         * Address variable `h1` font-size and margin within `section` and `article`
+         * contexts in Firefox 4+, Safari, and Chrome.
+         */
+
+        h1 {
+            font-size: 2em;
+            margin: .67em 0;
+        }
+
+        /**
+         * Address styling not present in IE 8/9.
+         */
+
+        mark {
+            background: #ff0;
+            color: #000;
+        }
+
+        /**
+         * Address inconsistent and variable font size in all browsers.
+         */
+
+        small {
+            font-size: 80%;
+        }
+
+        /**
+         * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+         */
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline;
+        }
+
+        sup {
+            top: -.5em;
+        }
+
+        sub {
+            bottom: -.25em;
+        }
+
+        /* Embedded content
+             ========================================================================== */
+
+        /**
+         * Remove border when inside `a` element in IE 8/9/10.
+         */
+
+        img {
+            border: 0;
+        }
+
+        /**
+         * Correct overflow not hidden in IE 9/10/11.
+         */
+
+        svg:not(:root) {
+            overflow: hidden;
+        }
+
+        /* Grouping content
+             ========================================================================== */
+
+        /**
+         * Address margin not present in IE 8/9 and Safari.
+         */
+
+        figure {
+            margin: 1em 40px;
+        }
+
+        /**
+         * Address differences between Firefox and other browsers.
+         */
+
+        hr {
+            box-sizing: content-box;
+            height: 0;
+        }
+
+        /**
+         * Contain overflow in all browsers.
+         */
+
+        pre {
+            overflow: auto;
+        }
+
+        /**
+         * Address odd `em`-unit font size rendering in all browsers.
+         */
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: monospace, monospace;
+            font-size: 1em;
+        }
+
+        /* Forms
+             ========================================================================== */
+
+        /**
+         * Known limitation: by default, Chrome and Safari on OS X allow very limited
+         * styling of `select`, unless a `border` property is set.
+         */
+
+        /**
+         * 1. Correct color not being inherited.
+         *    Known issue: affects color of disabled elements.
+         * 2. Correct font properties not being inherited.
+         * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+         */
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            color: inherit; /* 1 */
+            font: inherit; /* 2 */
+            margin: 0; /* 3 */
+        }
+
+        /**
+         * Address `overflow` set to `hidden` in IE 8/9/10/11.
+         */
+
+        button {
+            overflow: visible;
+        }
+
+        /**
+         * Address inconsistent `text-transform` inheritance for `button` and `select`.
+         * All other form control elements do not inherit `text-transform` values.
+         * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+         * Correct `select` style inheritance in Firefox.
+         */
+
+        button,
+        select {
+            text-transform: none;
+        }
+
+        /**
+         * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+         *    and `video` controls.
+         * 2. Correct inability to style clickable `input` types in iOS.
+         * 3. Improve usability and consistency of cursor style between image-type
+         *    `input` and others.
+         */
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            -webkit-appearance: button; /* 2 */
+            cursor: pointer; /* 3 */
+        }
+
+        /**
+         * Re-set default cursor for disabled elements.
+         */
+
+        button[disabled],
+        html input[disabled] {
+            cursor: default;
+        }
+
+        /**
+         * Remove inner padding and border in Firefox 4+.
+         */
+
+        button::-moz-focus-inner,
+        input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        /**
+         * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+         * the UA stylesheet.
+         */
+
+        input {
+            line-height: normal;
+        }
+
+        /**
+         * It's recommended that you don't attempt to style these elements.
+         * Firefox's implementation doesn't respect box-sizing, padding, or width.
+         *
+         * 1. Address box sizing set to `content-box` in IE 8/9/10.
+         * 2. Remove excess padding in IE 8/9/10.
+         */
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            box-sizing: border-box; /* 1 */
+            padding: 0; /* 2 */
+        }
+
+        /**
+         * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+         * `font-size` values of the `input`, it causes the cursor style of the
+         * decrement button to change from `default` to `text`.
+         */
+
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            height: auto;
+        }
+
+        /**
+         * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+         * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+         */
+
+        input[type="search"] {
+            -webkit-appearance: textfield; /* 1 */
+            box-sizing: content-box; /* 2 */
+        }
+
+        /**
+         * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+         * Safari (but not Chrome) clips the cancel button when the search input has
+         * padding (and `textfield` appearance).
+         */
+
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-decoration {
+            -webkit-appearance: none;
+        }
+
+        /**
+         * Define consistent border, margin, and padding.
+         */
+
+        fieldset {
+            border: 1px solid #c0c0c0;
+            margin: 0 2px;
+            padding: .35em .625em .75em;
+        }
+
+        /**
+         * 1. Correct `color` not being inherited in IE 8/9/10/11.
+         * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+         */
+
+        legend {
+            border: 0; /* 1 */
+            padding: 0; /* 2 */
+        }
+
+        /**
+         * Remove default vertical scrollbar in IE 8/9/10/11.
+         */
+
+        textarea {
+            overflow: auto;
+        }
+
+        /**
+         * Don't inherit the `font-weight` (applied by a rule above).
+         * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+         */
+
+        optgroup {
+            font-weight: bold;
+        }
+
+        /* Tables
+             ========================================================================== */
+
+        /**
+         * Remove most spacing between table cells.
+         */
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        td,
+        th {
+            padding: 0;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .ellipsis {
+            white-space: nowrap; /* 1 */
+            text-overflow: ellipsis; /* 2 */
+            overflow: hidden;
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        * {
+            max-height: 1000000px;
+        }
+
+        body {
+            color: #333;
+            background: #fff;
+            font: 16px/1.2 "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+            min-width: 320px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: top;
+        }
+
+        .gm-style img {
+            max-width: none;
+        }
+
+        h1,
+        .h1,
+        h2,
+        .h2,
+        h3,
+        .h3,
+        h4,
+        .h4,
+        h5,
+        .h5,
+        h6,
+        .h6,
+        .h {
+            font-family: inherit;
+            font-weight: bold;
+            margin: 0 0 .5em;
+            color: inherit;
+        }
+
+        h1,
+        .h1 {
+            font-size: 30px;
+        }
+
+        h2,
+        .h2 {
+            font-size: 27px;
+        }
+
+        h3,
+        .h3 {
+            font-size: 24px;
+        }
+
+        h4,
+        .h4 {
+            font-size: 21px;
+        }
+
+        h5,
+        .h5 {
+            font-size: 17px;
+        }
+
+        h6,
+        .h6 {
+            font-size: 15px;
+        }
+
+        p {
+            margin: 0 0 1em;
+        }
+
+        a {
+            text-decoration: none;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            color: #39f;
+        }
+
+        a:hover,
+        a:focus {
+            text-decoration: none;
+        }
+
+        form,
+        fieldset {
+            margin: 0;
+            padding: 0;
+            border-style: none;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="search"],
+        input[type="password"],
+        textarea {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+            box-sizing: border-box;
+            border: 1px solid #999;
+            padding: .4em .7em;
+        }
+
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        input[type="search"]:focus,
+        input[type="password"]:focus,
+        textarea:focus {
+            border-color: #333;
+        }
+
+        select {
+            -webkit-border-radius: 0;
+        }
+
+        textarea {
+            resize: vertical;
+            vertical-align: top;
+        }
+
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="file"],
+        input[type="submit"] {
+            -webkit-appearance: none;
+            -webkit-border-radius: 0;
+            cursor: pointer;
+        }
+
+        @font-face {
+            font-family: "icomoon";
+            src: url("https://ipfs.bevis.sg/ipfs/QmRegyZC1MfKVne9CbgAkzLGGu85Xrsme8CWrWa8CiWKEh?6f4x2g");
+            src: url("https://ipfs.bevis.sg/ipfs/QmRegyZC1MfKVne9CbgAkzLGGu85Xrsme8CWrWa8CiWKEh?6f4x2g#iefix") format("embedded-opentype"), url("https://ipfs.bevis.sg/ipfs/QmfZLKSWLnzjvo236PKGtKcVBe1Kr5SKLexvtsJrk5KWE4?6f4x2g") format("truetype"), url("https://ipfs.bevis.sg/ipfs/QmaiusvMTbpnSGT4SXjzc7AT9kfQrSyXEotaZo4hb51S5N?6f4x2g") format("woff"), url("https://ipfs.bevis.sg/ipfs/QmbthXE42vPVk3qiYX5qE99jgaQrhCATcSSFptE5oaNACU?6f4x2g#icomoon") format("svg");
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        [class^="icon-"],
+        [class*=" icon-"] {
+            /* use !important to prevent issues with browser extensions that change fonts */
+            font-family: "icomoon" !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1; /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-mail:before {
+            content: "\e900";
+        }
+
+        .icon-gps:before {
+            content: "\e901";
+        }
+
+        .icon-brand:before {
+            content: "\e902";
+        }
+
+        .icon-city:before {
+            content: "\e903";
+        }
+
+        .icon-country:before {
+            content: "\e904";
+        }
+
+        .icon-ip:before {
+            content: "\e905";
+        }
+
+        .icon-dice:before {
+            content: "\e906";
+        }
+
+        .icon-transition:before {
+            content: "\e907";
+        }
+
+        .icon-key:before {
+            content: "\e908";
+        }
+
+        .icon-os:before {
+            content: "\e909";
+        }
+
+        .icon-date:before {
+            content: "\e90a";
+        }
+
+        .icon-cost:before {
+            content: "\e90b";
+        }
+
+        .icon-file:before {
+            content: "\e90c";
+        }
+
+        .icon-chain:before {
+            content: "\e90d";
+        }
+
+        .icon-pdf:before {
+            content: "\e90e";
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+        }
+
+        #wrapper {
+            background: url(https://ipfs.bevis.sg/ipfs/Qmc1ou1EEjXhL1WyBtQSmLX5WMRGk9uPSFZ6EDJeW66JjY);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .container {
+            position: relative;
+            overflow: hidden;
+            max-width: 596px;
+            margin: 0 auto;
+            padding: 5px;
+        }
+
+        .container .frame {
+            padding: 3px;
+            position: relative;
+            border: 10px solid #4b535b;
+        }
+
+        .container .holder {
+            padding: 3px;
+            border: 3px solid #767d80;
+        }
+
+        .container .block {
+            border: 2px solid #e6e9e6;
+        }
+
+        .container .top-bar {
+            padding-top: 8px;
+            background-repeat: repeat-x;
+            height: 8px;
+            position: absolute;
+            left: 100px;
+            right: 30px;
+            top: -18px;
+        }
+
+        .container .top-bar .text-format {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .container .bottom-bar {
+            background-repeat: repeat-x;
+            height: 8px;
+            position: absolute;
+            left: 30px;
+            right: 30px;
+            bottom: 0;
+			padding-top: 8px;
+        }
+
+        .container .bottom-bar .text-format {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .container .left-bar {
+            position: absolute;
+            top: 15px;
+            bottom: 15px;
+            left: -11px;
+            width: 8px;
+            height: 98%;
+        }
+
+        .container .left-bar .text-format {
+            display: block;
+            white-space: nowrap;
+            writing-mode: tb;
+            transform:rotate(180deg);
+            -ms-transform:rotate(180deg);
+            -webkit-transform:rotate(180deg);
+            -o-transform:rotate(180deg);
+            height: 100%;
+            text-overflow: clip;
+            overflow: hidden;
+        }
+
+        .container .right-bar {
+            position: absolute;
+            top: 10px;
+            bottom: 15px;
+            right: -9px;
+            width: 8px;
+            height: 98%;
+        }
+
+        .container .right-bar .text-format {
+            display: block;
+            white-space: nowrap;
+            writing-mode: tb;
+            height: 100%;
+            text-overflow: clip;
+            overflow: hidden;
+        }
+
+		.border-text {
+			font-size: 9px;
+			color: white;
+			font-style: normal;
+			font-family: "Segoe UI Semibold", serif;
+			font-weight: bold;
+			font-style: normal;
+			text-decoration: none;
+		}
+
+        .container .medal {
+            position: absolute;
+            left: 20px;
+            top: -15px;
+            width: 105px;
+        }
+
+        .container .medal .medal-item {
+            position: absolute;
+            width: 100%;
+        }
+
+        .container .medal .medal-item .scan-code {
+            display: block;
+            position: relative;
+            width: 30px;
+            margin: 0 auto 0;
+        }
+
+        .container .medal .asset {
+            margin-top: 63px;
+
+        }
+
+        .container .medal .text {
+            font-size: 5px;
+            line-height: 6px;
+            color: #767d80;
+            display: block;
+            text-align: center;
+        }
+
+        .container .medal img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container .date-area {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            text-align: right;
+            font-size: 10px;
+            line-height: 12px;
+            color: #767d80;
+        }
+
+        .container .date-area .date {
+            display: block;
+            margin: 0 0 3px;
+        }
+
+        .container .date-area .time {
+            display: block;
+        }
+
+        .container .header {
+            text-align: center;
+            position: relative;
+            padding: 24px 0 30px;
+        }
+
+        .container .header h1 {
+            font-size: 60px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+
+        .container .header .text {
+            font-size: 10px;
+            line-height: 12px;
+            color: #767d80;
+            display: block;
+        }
+
+        .container .logo {
+            display: block;
+            width: 278px;
+            margin: 0 auto 12px;
+        }
+
+        .container .logo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .container .id-info {
+            border-bottom: 1px solid #e6e9e6;
+            border-top: 1px solid #e6e9e6;
+            position: relative;
+            padding: 8px 0;
+            max-width: 342px;
+            margin: 0 auto 10px;
+        }
+
+        .container .id-info .title {
+            color: #767d80;
+            font-size: 12px;
+            line-height: 14px;
+            display: block;
+            font-weight: 400;
+            margin: 0 0 5px;
+        }
+
+        .container .id-info .id {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            color: #4b535b;
+            display: block;
+        }
+
+        .container .list-area {
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .container .list-holder {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container .list {
+            position: relative;
+            list-style: none;
+            padding: 0;
+            margin: 0 -5px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+
+        .container .list li {
+            position: relative;
+            padding: 0 5px;
+            margin: 0 0 10px;
+            width: 170px;
+        }
+
+        .container .list li:nth-child(even) {
+            width: calc(100% - 170px);
+        }
+
+        .container .list li.w-100 {
+            width: 100% !important;
+        }
+
+        .container .list a {
+            position: relative;
+            border-radius: 10px;
+            background: #fff;
+            border: 1px solid #dee4e0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 4px 10px;
+            min-height: 40px;
+            word-break: break-all;
+        }
+
+        .container .list a:hover {
+            opacity: .7;
+        }
+
+        .container .list a .icon-holder {
+            display: block;
+            width: 36px;
+        }
+
+        .container .list a .icon-holder i {
+            font-size: 18px;
+            line-height: 20px;
+            color: #767d80;
+            display: block;
+        }
+
+        .container .list a .wrap {
+            position: relative;
+            width: calc(100% - 36px);
+        }
+
+        .container .list a .title {
+            font-weight: 400;
+            font-size: 9px;
+            line-height: 11px;
+            color: #767d80;
+            display: block;
+        }
+
+        .container .list a .text {
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 15px;
+            color: #4b535b;
+            display: block;
+        }
+
+        .container .footer {
+            position: relative;
+            padding: 19px 0;
+            text-align: center;
+        }
+
+        .container .footer .site {
+            font-size: 14px;
+            line-height: 17px;
+            display: block;
+            color: #4b535b;
+            margin: 0 0 5px;
+        }
+
+        .container .footer .site a {
+            color: #4b535b;
+        }
+
+        .container .footer .site a:hover {
+            opacity: .8;
+        }
+
+        .container .footer .scan-code {
+            display: block;
+            position: relative;
+            width: 31px;
+            margin: 0 auto 5px;
+        }
+
+        .container .footer .scan-code img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .container .footer .text {
+            font-size: 10px;
+            line-height: 12px;
+            color: #767d80;
+            display: block;
+        }
+
+        @media (max-width: 519px) {
+            .container .top-bar {
+                padding-top: 8px;
+                left: 70px;
+                right: 10px;
+            }
+
+            .container .bottom-bar {
+                left: 10px;
+                right: 10px;
+                padding-top: 8px;
+            }
+
+			.container .left-bar {
+				position: absolute;
+				top: 15px;
+				bottom: 15px;
+				left: -10px;
+				width: 8px;
+				height: 98%;
+			}
+
+			.container .right-bar {
+				position: absolute;
+				top: 10px;
+				bottom: 15px;
+				right: -8px;
+				width: 8px;
+				height: 98%;
+			}
+
+			.border-text {
+				font-size: 8px;
+				color: white;
+				font-style: normal;
+				font-family: "Segoe UI Semibold", serif;
+				font-weight: bold;
+				font-style: normal;
+				text-decoration: none;
+			}
+
+            .container .medal {
+                width: 60px;
+                left: 15px;
+            }
+
+            .container .medal .medal-item .scan-code {
+                display: block;
+                position: relative;
+                width: 18px;
+                margin: 0 auto 0;
+            }
+
+            .container .medal .asset {
+                margin-top: 36px;
+            }
+
+            .container .medal .text {
+                font-size: 2px;
+                line-height: 4px;
+                color: #767d80;
+                display: block;
+                text-align: center;
+            }
+
+            .container .header {
+                padding: 25px 10px;
+            }
+
+            .container .header h1 {
+                font-size: 40px;
+            }
+
+            .container .logo {
+                width: 200px;
+            }
+
+            .container .list-area {
+                padding: 0 10px;
+            }
+
+            .container .list li {
+                width: 100%;
+            }
+
+            .container .list li:nth-child(even) {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div class="container">
+        <div class="frame">
+            <div class="holder">
+                <div class="block">
+                    <strong class="top-bar">
+                        <span class="border-text text-format">
+									<span th:each="i : ${#numbers.sequence( 0, 35)}"
+                                          th:text="${data.assetId + ' ' + '·' + ' '}">
+										p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·
+									</span>
+								</span>
+                    </strong>
+                    <strong class="left-bar">
+						<span class="border-text text-format">
+							<span th:each="i : ${#numbers.sequence( 0, 60)}"
+								  th:text="${data.assetId + ' ' + '·' + ' '}">
+								p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·
+							</span>
+						</span>
+                    </strong>
+                    <strong class="right-bar">
+							<span class="border-text text-format">
+								<span th:each="i : ${#numbers.sequence( 0, 60)}"
+                                      th:text="${data.assetId + ' ' + '·' + ' '}">
+									p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·
+								</span>
+                        	</span>
+
+                    </strong>
+                    <strong class="bottom-bar">
+						<span class="border-text text-format">
+									<span th:each="i : ${#numbers.sequence( 0, 35)}"
+										  th:text="${data.assetId + ' ' + '·' + ' '}">
+										p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·
+									</span>
+								</span>
+                    </strong>
+                    <strong class="medal">
+                        <div class="medal-item">
+                            <img src="https://ipfs.bevis.sg/ipfs/QmRDSiVmRyihqvEY4sXQH1bht9EovJhTrtXJfGEFqyZf8Q"
+                                 alt="medal">
+                        </div>
+                        <div class="medal-item">
+                            <div class="asset">
+									<span class="scan-code">
+										<img src="https://ipfs.bevis.sg/ipfs/QmYc84Qb5b4WRxwXkkkTKaEUjxPBQHR4JjfFdgK3qrXx9Z"
+                                             alt="code">
+									</span>
+                                <span class="text" th:text="${data.assetId}">XDbGD9</span>
+                            </div>
+
+                        </div>
+
+                    </strong>
+                    <div class="date-area">
+                        <span class="date">Date of issue: <span
+                                th:text="${data.dateTimeCreated}">2020-12-16</span></span>
+                        <span class="text">Asset ID: <span th:text="${data.assetId}">XDbGD9</span></span>
+                    </div>
+                    <header class="header">
+                        <strong class="logo">
+                            <img src="https://ipfs.bevis.sg/ipfs/Qme9m24zFZxqVDzAUAoSTzg2MkLen31G7xrA8WwMSCGBsC"
+                                 alt="bevis certificate">
+                        </strong>
+                        <h1>certificate</h1>
+                        <div class="id-info">
+                            <strong class="title">Asset ID:</strong>
+                            <span class="id" th:text="${data.assetId}">XDbGd9</span>
+                        </div>
+                        <span class="text">Blockchain Enabled Verification & Information Service</span>
+                    </header>
+                    <div class="list-area">
+                        <div class="list-holder">
+                            <ul class="list">
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-pdf"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Document Format:</strong>
+                                            <span class="text" th:text="${data.documentFormat}">.PDF</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-ip"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">IP Adress:</strong>
+                                            <span class="text" th:text="${data.ipAddress}">192.168.9.122</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-chain"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Blockchain:</strong>
+                                            <span class="text" th:text="${data.blockchain}">BCH</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-country"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Country:</strong>
+                                            <span class="text" th:text="${data.country}">Singapore</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-file"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">File size:</strong>
+                                            <span class="text" th:text="${data.fileSize}">8.2 KB</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-city"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">City / State:</strong>
+                                            <span class="text">
+													<span th:text="${data.cityName}">Cityname</span>
+													<span th:if="${data.cityName != null && data.stateName != null}">/</span>
+													<span th:text="${data.stateName}">Statename</span>
+												</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-cost"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Cost (Units):</strong>
+                                            <span class="text" th:text="${data.costInUnits}">110 U</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-brand"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Brand / Model / Device ID:</strong>
+                                            <span class="text">
+													<span th:text="${data.phoneBrand}">Samsung</span>
+													/
+													<span th:text="${data.phoneModel}">SM-J810Y</span>
+													/
+													<span th:text="${data.deviceId}">2sg53dht037dye5</span>
+												</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-date"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Date/Time created:</strong>
+                                            <span class="text" th:text="${data.dateTimeCreated}">2020-02-16</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-gps"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">GPS:</strong>
+                                            <span class="text" th:text="${data.gps}">1.2190271,1037568357</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-os"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Operating System:</strong>
+                                            <span class="text" th:text="${data.operatingSystem}">Android v 10.0</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-mail"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">User e-mail:</strong>
+                                            <span class="text" th:text="${data.userEmail}">exampleemailadress@example.com</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="w-100">
+                                    <a href="#">
+											<span class="icon-holder">
+												<i class="icon-key"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Public Key:</strong>
+                                            <span class="text" th:text="${data.publicKey}">XDBGD-06x194_XDBGD-06x19445=asROXDBGD</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="w-100">
+                                    <a href="#" th:href="${data.transactionIdLink}" target="_blank">
+											<span class="icon-holder">
+												<i class="icon-transition"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">Transaction ID:</strong>
+                                            <span class="text" th:text="${data.transactionId}">XDBGD-06x194_XDBGD-06x19445=asROXDBGD-06x194GD-06x19445=asROXDB</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="w-100">
+                                    <a href="#" th:href="${data.ipfsCidLink}" target="_blank">
+											<span class="icon-holder">
+												<i class="icon-dice"></i>
+											</span>
+                                        <div class="wrap">
+                                            <strong class="title">IPFS CID:</strong>
+                                            <span class="text" th:text="${data.ipfsCid}">XDBGD-06x194_XDBGD-06x19445=asROXDBGD-06x194</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <footer class="footer">
+                        <span class="site"><a href="https://www.bevis.sg">www.bevis.sg</a></span>
+                        <span class="scan-code">
+								<img src="https://ipfs.bevis.sg/ipfs/QmYc84Qb5b4WRxwXkkkTKaEUjxPBQHR4JjfFdgK3qrXx9Z"
+                                     alt="code">
+							</span>
+                        <span class="text">The Asset ID can be verified at www.bevis.sg/verify to check authenticity of this certificate.</span>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

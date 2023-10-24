@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <property name="autoIncrement" value="true"/>
+
+    <changeSet id="20220622180545-1" author="bohdan">
+        <createTable tableName="token">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="token_id" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="blockchain_id" type="int(5)">
+                <constraints nullable="false" />
+            </column>
+            <column name="created_date" type="timestamp"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </createTable>
+        <addForeignKeyConstraint baseColumnNames="blockchain_id"
+                                 baseTableName="token"
+                                 constraintName="fk_token_blockchain_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="blockchain"/>
+        <addColumn tableName="token_request">
+            <column name="old_token_id" type="varchar(255)" />
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

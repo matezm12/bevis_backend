@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.4</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.bevis</groupId>
+    <artifactId>bevis-be</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>bevis</name>
+    <description>Bevis back-end project on Spring Boot</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>11</java.version>
+        <docker.image.prefix>bevis-be</docker.image.prefix>
+        <kotlin.version>1.6.10</kotlin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>app-be</module>
+        <module>common</module>
+        <module>resources</module>
+        <module>files</module>
+        <module>aws</module>
+        <module>keygen</module>
+        <module>balance</module>
+        <module>jsonrpc</module>
+        <module>ipfs</module>
+        <module>inapppurchase</module>
+        <module>email</module>
+        <module>email-core</module>
+        <module>exchange</module>
+        <module>pdf</module>
+        <module>social</module>
+        <module>security</module>
+        <module>blockchain</module>
+        <module>csv</module>
+        <module>asset</module>
+        <module>master</module>
+        <module>assettype</module>
+        <module>config</module>
+        <module>assetinfo</module>
+        <module>exchange-data</module>
+        <module>assetimport</module>
+        <module>certbuilder</module>
+        <module>certificate</module>
+        <module>blockchainfile</module>
+        <module>user</module>
+        <module>socialcore</module>
+        <module>account</module>
+        <module>file-core</module>
+        <module>credits</module>
+        <module>certificate-core</module>
+        <module>lister</module>
+        <module>filecode</module>
+        <module>asset-publisher</module>
+        <module>balance-core</module>
+        <module>blockchain-core</module>
+        <module>events</module>
+        <module>versioning</module>
+        <module>dashboard</module>
+        <module>nft-core</module>
+        <module>nft</module>
+        <module>notification</module>
+    </modules>
+
+</project>

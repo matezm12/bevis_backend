@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      th:with="ipfsUrl='https://ipfs.bevis.sg/ipfs/'">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <link href="uploads/pix-favicon.ico" rel="shortcut icon">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <!-- CSS dependencies -->
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/bootstrap.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/font-awesome.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/jquery.fancybox.min.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/pix_style.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/main.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/font-style.css" rel="stylesheet"
+          type="text/css"/>
+    <link href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/css/animations.min.css"
+          media="all" rel="stylesheet" type="text/css"/>
+    <!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="css/ie-fix.css"/>
+    <![endif]-->
+    <title>Index</title>
+    <style id="pix_page_style" type="text/css"></style>
+</head>
+<body>
+<div class="pix_section pix-padding-v-130 pix-corporate-1"
+     data-bg-img="linear-gradient( rgba(0,0,0,0.6) ,rgba(0,0,0,0.6))"
+     id="section_intros_1"
+     style="display: block; background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)); background-repeat: repeat-x; padding-top: 50px; padding-bottom: 50px; background-size: cover; background-attachment: fixed;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 column ui-droppable col-md-3" style="display: block;">
+                <div class="pix-content pix-padding-bottom-30"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <p class="pix-black-gray-light big-text text-center">
+                        <span class="pix_edit_text"><span style="font-style: italic;">At a glance...</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 column ui-droppable col-md-3" style="display: block;">
+                <div class="pix-content pix-padding-bottom-30"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <p class="pix-black-gray-light big-text text-center">
+                        <span class="pix_edit_text"><span style="font-weight: bold;" th:text="${data.assetId}">Pjpif2 </span>- <span
+                                style="font-style: italic;">Asset ID</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 column ui-droppable col-md-3" style="display: block;">
+                <div class="pix-content pix-padding-bottom-30"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <p class="pix-black-gray-light big-text text-center">
+                        <span class="pix_edit_text"><span style="font-weight: 700;" th:text="${data.sku}">shn-goldbug</span> - <span
+                                style="font-style: italic;">SKU</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 column ui-droppable col-md-3" style="display: block;">
+                <div class="pix-content pix-padding-bottom-30"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <p class="pix-black-gray-light big-text text-center">
+       <span class="pix_edit_text"><span style="font-weight: 700;"
+                                         th:text="${data.dateCreated}"
+       >24 October 2019
+</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-8 column ui-droppable col-md-1" style="display: block;">
+            </div>
+            <div class="col-xs-12 col-sm-8 column ui-droppable col-md-6" style="display: block;">
+                <div class="pix-content" style="background-repeat: repeat-x; padding: 50px 0px 0px; margin: 0px;">
+                    <h1 class="pix-white">
+                        <span class="pix_edit_text"><p><strong><span
+                                style="font-size: 28px;" th:text="${data.preTitle}">Roman Booteen's</span></strong></p><p></p></span>
+                    </h1>
+                    <h1 class="pix-white">
+                        <span class="pix_edit_text">
+                                <b style="font-family: inherit; font-size: 72px;">
+                            <span
+                                    style="font-size: 72px;"
+                                    th:text="${data.title}"
+                            >Gold Bug</span>
+                        </b>
+                                <br>
+                        </span>
+                    </h1>
+                    <p class="pix-slight-white big-text pix-margin-bottom-20">
+                        <span class="pix_edit_text" th:text="${data.postTitle}">Limited Edition licensed replica featuring original art by Hobo Nickel Master Engraver Roman Booteen.</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 column ui-droppable col-md-4" style="display: block;">
+                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">
+                    <a data-fancybox="gallery"
+                       th:href="${ipfsUrl+data.imgIpfs}"
+                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/uploads/GoldBug-fTY.gif">
+                        <img alt=""
+                             class="img-responsive pix-inline-block"
+                             th:src="${ipfsUrl+data.imgIpfs}"
+                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/uploads/GoldBug-fTY.gif">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:if="${data.section1Enabled == true}"
+        class="pix_section gray-bg pix-padding" id="section_content_3"
+     style="display: block; background-color: rgb(244, 244, 244); background-repeat: repeat-x; padding-top: 0px; padding-bottom: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12 column ui-droppable">
+                <div class="pix-content pix-padding-bottom-10 text-center"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <h1 class="pix-black-gray-dark text-center pix-no-margin-top pix-md-width-text">
+       <span class="pix_edit_text"><span style="font-size: 36px;">Legendary </span><span
+               style="font-weight: bold; font-size: 36px;">Hobo Nickel</span><span style="font-size: 36px;"> master engraver </span><span
+               style="font-weight: bold; text-decoration-line: underline; font-size: 36px;">ROMAN BOOTEEN</span><span
+               style="font-size: 36px;"> has done it again.
+</span><span><br></span></span>
+                    </h1>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 col-sm-6 column ui-droppable">
+                <div class="pix-content pix-padding-top-20"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <p class="pix-black-gray-light big-text pix-margin-bottom-20">
+       <span class="pix_edit_text"><span><span style="font-weight: bold;">No subject is off limits, no topic too dull for his wild imagination.&nbsp;</span>&nbsp;</span><br><span><br></span><span>After completing the most epic hobo nickel ever, Roman wasted no time in raising the bar once again with his next masterpiece - the Gold Bug.
+</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-xs-12 col-sm-6 column ui-droppable">
+                <div class="pix-content pix-padding-top-20"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <p class="pix-black-gray-light big-text pix-margin-bottom-20">
+       <span class="pix_edit_text">Inspired by Edgar Allen Poe’s almost forgotten tale of the same name, Booteen’s Gold Bug features an intricately carved Morgan Dollar, concealing a button that activates the beetle’s wings, exposing a tenth ounce of solid gold. One lucky collector scooped it up at auction in December 2017 for a whopping nine thousand two hundred dollars.
+</span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 column ui-droppable col-md-1" style="display: block;">
+            </div>
+            <div class="col-xs-12 col-sm-6 column ui-droppable col-md-10" style="display: block;">
+                <div class="pix-content"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px; text-align: center;">
+                    <p class="pix-black-gray-light big-text pix-margin-bottom-20">
+                        <span class="pix_edit_text"><span><span style="font-size: 20px;">Roman’s Gold Bug and its hidden secrets are a nod to Poe’s story, which is considered the first non-fiction work of its kind to include cryptography: hidden elements readers must decipher to make sense of the story.&nbsp;</span></span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 column ui-droppable col-md-1" style="display: block;">
+            </div>
+        </div>
+    </div>
+</div>
+<div th:if="${data.section2Enabled == true}"
+     class="pix_section" id="section_content_2"
+     style="display: block; background-repeat: repeat-x; padding-top: 20px; padding-bottom: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 column ui-droppable col-md-6" style="display: block;">
+                <div class="pix-content text-left">
+                    <h4 class="pix-navy-blue pix-no-margin-top secondary-font">
+                        <span class="pix_edit_text" th:text="${data.section1Text1}">Silver Hobo Nickel Master Engraver</span>
+                    </h4>
+                    <h1 class="pix-navy-blue pix-no-margin-top secondary-font">
+                        <span class="pix_edit_text"><span style="font-weight: bold;" th:text="${data.section1Text2}">Roman Booteen</span></span>
+                    </h1>
+                    <p class="pix-navy-blue-2 big-text pix-margin-bottom-10">
+                        <span class="pix_edit_text"><span style="font-style: italic;">MEET THE ARTIST</span>&nbsp; &nbsp;<span
+                                style="font-size: 24px;" th:text="${data.section1Text3}">Based in Russia, rising star Roman Booteen (spelled Butin) maintains a mysterious level of anonymity, while producing hobo nickel creations which regularly shock the coin collecting community with both their subject matter and complexity. His carvings include pop culture figures, and he often plays with exaggerating and softening the facial features of his characters giving them a real sense of personality.</span></span>
+                    </p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 column ui-droppable col-md-9"
+                 style="overflow: hidden; opacity: 1; width: 480px; height: 627px; display: block;">
+                <div class="pix-content text-center"><img
+                        alt=""
+                        class="img-responsive pix-inline-block"
+                        th:src="${ipfsUrl+data.section1ImgIpfs}"
+                        src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/uploads/roman_booteen-jU7.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pix_section pix-padding gray-bg" id="section_pricing_1" style="display: block;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12 column ui-droppable">
+                <div class="pix-content pix-padding-bottom-30"
+                     style="background-repeat: repeat-x; padding: 0px; margin: 0px;">
+                    <h2 class="pix-black-gray-dark text-center pix-no-margin-top secondary-font">
+       <span class="pix_edit_text"><span style="font-weight: 700;">Manufacturing &amp; Supply Chain Specifications
+</span></span>
+                    </h2>
+                </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable"
+                 th:each="propertyGroup : ${data.properties}">
+                <div class="pix-content pix-radius-3 white-bg pix-padding-h-10 pix-padding-v-30 text-center pix-margin-v-10">
+                    <p class="pix-black-gray-light pix-margin-bottom-20">
+       <span class="pix_edit_text">
+           <span th:each="property : ${propertyGroup}">
+               <br>
+               <span th:text="${property.fieldTitle}">Manufacturer</span>: <span style="font-weight: bold;"
+                                                                                 th:text="${property.fieldValue}">HotCoco (Thailand) Co Ltd</span>
+<br>
+           </span>
+
+           </span>
+                        </span>
+                    </p>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="pix_section pix-padding-v-85" id="section_gallery_1"
+     style="display: block; background-repeat: repeat-x; padding-top: 0px; padding-bottom: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable"
+                 th:each="fileUrl : ${data.fileUrls}">
+                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">
+                    <a data-fancybox="gallery"
+                       th:href="${ipfsUrl+fileUrl}"
+                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-1.jpg">
+                        <img alt=""
+                             class="img-responsive pix-inline-block"
+                             th:src="${ipfsUrl+fileUrl}"
+                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-1.jpg">
+                    </a>
+                </div>
+            </div>
+<!--            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable">-->
+<!--                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">-->
+<!--                    <a data-fancybox="gallery"-->
+<!--                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-3.jpg">-->
+<!--                        <img alt=""-->
+<!--                             class="img-responsive pix-inline-block"-->
+<!--                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-3.jpg">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable">-->
+<!--                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">-->
+<!--                    <a data-fancybox="gallery"-->
+<!--                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-4.jpg">-->
+<!--                        <img alt=""-->
+<!--                             class="img-responsive pix-inline-block"-->
+<!--                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-4.jpg">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable">-->
+<!--                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">-->
+<!--                    <a data-fancybox="gallery"-->
+<!--                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-5.jpg">-->
+<!--                        <img alt=""-->
+<!--                             class="img-responsive pix-inline-block"-->
+<!--                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-5.jpg">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable">-->
+<!--                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">-->
+<!--                    <a data-fancybox="gallery"-->
+<!--                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-6.jpg">-->
+<!--                        <img alt=""-->
+<!--                             class="img-responsive pix-inline-block"-->
+<!--                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-6.jpg">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4 col-xs-12 col-sm-4 column ui-droppable">-->
+<!--                <div class="pix-content text-center pix-margin-v-10 pix-radius-3">-->
+<!--                    <a data-fancybox="gallery"-->
+<!--                       href="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-6.jpg">-->
+<!--                        <img alt=""-->
+<!--                             class="img-responsive pix-inline-block"-->
+<!--                             src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/images/modern/gallery-image-6.jpg">-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+        </div>
+    </div>
+</div>
+
+
+<!-- Javascript -->
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/jquery-1.11.2.js"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/jquery-ui.js"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/bootstrap.js"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/velocity.min.js"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/velocity.ui.min.js"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/appear.min.js" type="text/javascript"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/animations.js" type="text/javascript"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/plugins.js" type="text/javascript"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/jquery.fancybox.min.js" type="text/javascript"></script>
+<script src="https://ipfs.io/ipfs/QmcMJDa7xrWBse6FyaAskyXryYYUHa1fYauqcZHeufBQpQ/js/custom.js"></script>
+</body>
+</html>

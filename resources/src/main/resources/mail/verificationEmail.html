@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+    <h3>Email verification</h3>
+
+    <p>Account verification code:
+        <span th:text="${data.verificationCode}">123</span>
+    </p>
+
+    <p>Account verification link:
+        <a th:href="${data.verificationLink}">Click verification link</a>
+    </p>
+
+</body>
+</html>

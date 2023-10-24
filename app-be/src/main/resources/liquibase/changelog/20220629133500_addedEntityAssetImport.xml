@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="autoIncrement" value="true"/>
+
+    <changeSet id="20220629133500-1" author="bohdan">
+        <addColumn tableName="assets_import">
+            <column name="sku" type="varchar(6)" afterColumn="upc"/>
+        </addColumn>
+        <addForeignKeyConstraint baseColumnNames="sku"
+                                 baseTableName="assets_import"
+                                 constraintName="fk_assets_import_sku"
+                                 referencedColumnNames="asset_id"
+                                 referencedTableName="master"/>
+    </changeSet>
+
+</databaseChangeLog>

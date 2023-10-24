@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+    <p>Thank you for using Bevis, the Blockchain-Enabled Verification & Information Service. You're helping make the world a more honest, transparent place to live & work.</p>
+
+    <h3>About your Asset:</h3>
+
+    <p>
+        <b>Asset ID:</b>
+        <span th:text="${data.assetId}">a1z2x3</span>
+    </p>
+
+    <p>
+        <b>Block:</b>
+        <span th:text="${data.block}">650712</span>
+        <span th:text="${data.blockchain}">BCH</span>
+    </p>
+
+    <p>
+        <b>Transaction ID:</b>
+        <a th:href="${data.transactionIdLink}" href="http://www.google.com" target="_blank">
+            <span th:text="${data.transactionId}">xxxxxxxx</span>
+        </a>
+    </p>
+
+    <p>
+        <b>Timestamp:</b>
+        <span th:text="${data.dateTimeCreated}">2020-04-11 09:01:00 GMT</span>
+    </p>
+
+    <p>
+        <b>IPFS File:</b>
+        <a th:href="${data.ipfsCidLink}" href="http://www.google.com" target="_blank">
+            <span th:text="${data.ipfsCid}">Qmxxxxxx</span>
+        </a>
+    </p>
+
+    <p>
+        <span>Attached please find your official Bevis Proof of Existence Certificate & receipt of transaction. A copy of this certificate has already been posted to the blockchain as further proof of existence. Be sure to make a record of your Asset ID for easy future retrieval.</span>
+    </p>
+    <p>
+        <span>Please contact our support team online at <a href="https://bevis.sg/help">bevis.sg/help</a> if you need any assistance.</span>
+    </p>
+
+</body>
+</html>

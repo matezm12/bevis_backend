@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<h3>Account created <span th:text="${data.user.firstName+' '+data.user.lastName}"></span></h3>
+    <p>
+        User email:
+        <b><span th:text="${data.user.email}">email@gmail.com</span> </b>
+    </p>
+    <p>
+        User Password:
+        <b><span th:text="${data.password}">password</span> </b>
+    </p>
+</body>
+</html>

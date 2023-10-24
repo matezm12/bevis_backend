@@ -1,0 +1,222 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overridden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+#
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+app:
+  name: bevis
+  version-name: v2.6.0
+
+logging:
+  file:
+    name: /tmp/${app.name}.log
+  level:
+    com.bevis: ${LOG_LEVEL}
+    com.bevis.aws: INFO
+    org.jooq: WARN
+    org.hibernate.SQL: INFO
+    org.hibernate.type: WARN
+
+security:
+  authentication:
+    jwt:
+      secret: ${JWT_SECRET}
+      # Token is valid 24 hours
+      token-validity-in-seconds: 86400
+      token-validity-in-seconds-for-remember-me: 2592000
+
+server:
+  port: 9090
+
+  tomcat:
+    max-threads: 1500
+    max-connections: 1500
+    relaxed-query-chars: "[,]"
+
+hibernate:
+  ddl-auto: none
+  cache:
+    use_second_level_cache: true
+    region:
+      factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+
+spring:
+  main:
+    banner-mode: "off"
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        types:
+          print:
+            banner: false
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  datasource:
+    url: ${DB_DATASOURCE}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  servlet:
+    multipart:
+      max-file-size: 250MB
+      max-request-size: 250MB
+
+crypto-balance:
+  base-url: ${CRYPTO_BALANCE_URL}
+  api-key: ${CRYPTO_BALANCE_API_KEY}
+
+nft:
+  gateway:
+    base-url: ${NFT_GATEWAY_BALANCE_URL}
+    api-key: ${NFT_GATEWAY_API_KEY}
+
+  slp:
+    base-url: ${NFT_SLP_GATEWAY_BASE_URL}
+    api-key: ${NFT_SLP_GATEWAY_API_KEY}
+    testMode: ${NFT_SLP_TEST_MODE}
+
+nft-core:
+  token-request:
+    chunk-size: ${NFT_CORE_TOKEN_REQ_CHUNK_SIZE}
+
+balance-core:
+  balance-update:
+    refreshTimeIntervalInMilliseconds: ${BALANCE_UPDATE_INTERVAL_MS} #5*60*1000 (5 minutes)
+
+exchange-course:
+  refreshTimeIntervalInMilliseconds:
+    cryptoCurrencies: 300000 #5*60*1000 (once per 5 minutes)
+    fiatCurrencies: 3600000 #60*60*1000 (once per 1 hour)
+
+crypto-exchange:
+  base-url: ${CRYPTO_EXCHANGE_URL}
+  api-key: ${CRYPTO_EXCHANGE_API_KEY}
+
+#TODO remove it
+common:
+  imagePlaceholder: ${COMMON_IMAGE_PLACEHOLDER}
+  resources:
+    baseFolder: /tmp
+    fontsFolder: fonts/
+
+#TODO refactor this
+aws:
+  credentials:
+    accessKey: ${AWS_CREDENTIALS_ACCESS_KEY}
+    secretKey: ${AWS_CREDENTIALS_SECRET_KEY}
+  ses:
+    region: us-east-1
+    credentials:
+      accessKey: ${AWS_SES_ACCESS_KEY}
+      secretKey: ${AWS_SES_SECRET_KEY}
+  s3:
+    baseHtmlTemplatesUrl: ${BASE_HTML_TEMPLATES_URL}
+
+sender:
+  webSiteUrl: ${SENDER_WEBSITE_URL}
+  activateBaseUrl: ${sender.webSiteUrl}/account/activate?key=
+  resetPasswordFinishBaseUrl: ${sender.webSiteUrl}/account/reset/finish?key=
+  email: ${EMAIL_SENDER}
+
+api:
+  rest:
+    min-supported-version: v1.0
+    current-version: v1.0
+
+telegram:
+  botToken: ${TELEGRAM_BOT_TOKEN}
+  notificationChannelId: ${TELEGRAM_NOTIFICATION_CHANNEL}
+
+pinata:
+  apiKey: ${PINATA_API_KEY}
+  secretApiKey: ${PINATA_API_SECRET}
+
+async:
+  corePoolSize: 2
+  maxPoolSize: 50
+  queueCapacity: 10000
+
+bevis-asset-push:
+  maxFileSizeInBytes: 10485760 #10mb
+
+social:
+  google:
+    clientId: ${OAUTH2_GOOGLE_CLIENT_ID}
+    clientSecret: ${OAUTH2_GOOGLE_CLIENT_SECRET}
+
+  facebook:
+    clientId: ${OAUTH2_FACEBOOK_CLIENT_ID}
+    clientSecret: ${OAUTH2_FACEBOOK_CLIENT_SECRET}
+
+  apple:
+    keyId: ${OAUTH2_APPLE_KEY_ID}
+    teamId: ${OAUTH2_APPLE_TEAM_ID}
+    clientId: ${OAUTH2_APPLE_CLIENT_ID}
+    bundleId: ${OAUTH2_APPLE_BUNDLE_ID}
+    privateKey: ${OAUTH2_APPLE_PRIVATE_KEY_BASE64}
+
+certificate:
+  resourcesFolder: pdf/certificate
+
+blockchain-node:
+  gateway-base-url: ${BLOCKCHAIN_FULLNODE_BASE_URL}
+  gateway-api-key: ${BLOCKCHAIN_FULLNODE_GATEWAY_API_KEY}
+
+erc20:
+  base-url: ${NFT_GATEWAY_BALANCE_URL} #change env name to CRYPTO_TOKEN_GATEWAY_URL
+  api-key: ${NFT_GATEWAY_API_KEY} #change env name to CRYPTO_TOKEN_GATEWAY_URL
+
+in-app-purchase:
+  google-play:
+    app-name: BEVIS
+    package-name: com.rearden_metals.bevis
+    json-location: ${GOOGLE_PLAY_JSON}
+
+  app-store:
+    purchase-mode: ${INAPP_PURCHASE_APPSTORE_MODE} #1. "buy" - real money processing, "sandbox" - test money processing
+    bundle-id: com.rearden-metals.bevis
+
+crypto-wallet-generator:
+  aws-lambda-url: ${KEYGEN_URL}
+  aws-lambda-api-key: ${KEYGEN_API_KEY}
+
+credits:
+  payments-enabled: ${CREDITS_PAYMENTS_ENABLED} #true - payments enabled, false - disabled
+
+codereadr:
+  api-key: ${CODEREADR_API_KEY}
+
+certificate-builder:
+  template-name: certs/cert-template
+
+# Used for signing OP-RETURN tx string data
+data-sign:
+  secret: ${DATA_SIGN_SECRET}
+
+org:
+  jooq:
+    no-logo: true
+
+ipfs:
+  cluster:
+    baseUrl: ${IPFS_CLUSTER_BASE_URL}
+    apiKey: ${IPFS_CLUSTER_API_KEY}
+  downloadUrl: ${IPFS_DOWNLOAD_URL}
+
+email:
+  sendgrid:
+    apiKey: ${SEND_GRID_API_KEY}

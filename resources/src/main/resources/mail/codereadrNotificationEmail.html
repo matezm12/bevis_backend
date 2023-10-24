@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+    <h3>Codereadr Import Notification Email</h3>
+
+
+    <p>Dear <span th:text="${data.emails}">terry@hotco.co,rgray@hotco.co</span>,</p>
+
+    <p>The user "<span th:text="${data.username}">test@test.com</span>" just uploaded
+        <b th:text="${data.scansCount}">11</b> scans for the service
+        "<b th:text="${data.serviceId}">BEVIS Sticker to Laser App</b>" from the device
+        "<b th:text="${data.deviceId}">A11qtfn</b>".
+        You will find their scan assetIDs data in the attached file.</p>
+
+    <p>Scan ID: <b th:text="${data.scanId}"></b></p>
+
+    <p>This is an automated message. Please do not reply to this email. </p>
+</body>
+</html>

@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo Entered the build phase...
+      - rm -rf ./app-be/target
+      - echo "Removed old"
+      - ./mvnw clean install -DskipTests
+      - echo "Built maven project successfully"
+      - cp ./app-be/target/app-be-0.0.1-SNAPSHOT.jar ./app-be-0.0.1-SNAPSHOT.jar
+      - echo "Copyed to root"
+  post_build:
+    commands:
+      - echo Build completed successfully
+artifacts:
+  files:
+    - ./app-be-0.0.1-SNAPSHOT.jar
+    - .ebextensions/**/*
+    - .platform/**/*

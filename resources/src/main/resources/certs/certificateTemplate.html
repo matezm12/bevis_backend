@@ -1,0 +1,961 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+      th:with="ipfsUrl='https://ipfs.bevis.sg/ipfs/'">
+<head>
+    <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+    <style type="text/css">
+
+        @page {
+            size: A4;
+            margin: 0px;
+            padding: 0px;
+
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+
+            /*background-image: url(images/bg.png);*/
+            background-size: cover;
+        }
+
+        hr {
+            border: 0.5px solid #dce1e3;
+        }
+
+        div {
+            /*outline: 1px dashed blue;*/
+        }
+
+        .certificate-label {
+            font-family: "Segoe UI Light";
+            font-size: 80px;
+            color: #495c63;
+
+            text-decoration: none
+        }
+
+        .item-label {
+            font-family: "Segoe UI", serif;
+            font-size: 10.1px;
+            color: #6c7d85;
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none
+        }
+
+        .item-value {
+            font-family: "Segoe UI Semibold", serif;
+            font-size: 12px;
+            color: #495c63;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none
+        }
+
+        .item-value-large {
+            font-family: "Segoe UI Semibold", serif;
+            font-size: 14px;
+            color: #495c63;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none
+        }
+
+        .asset-value {
+            font-family: "Segoe UI Semibold", serif;
+            font-size: 28.1px;
+            color: rgb(99, 115, 124);
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none
+        }
+
+        .sign-text {
+            font-family: "Segoe UI",
+            serif;
+            font-size: 10.1px;
+            color: rgb(137, 150, 157);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none
+        }
+
+        .sign-text-small {
+            font-family: "Segoe UI",
+            serif;
+            font-size: 9px;
+            color: rgb(137, 150, 157);
+            font-style: normal;
+        }
+
+        .footer-text {
+            font-family: "Segoe UI",
+            serif;
+            font-size: 10.1px;
+            color: rgb(137, 150, 157);
+            font-weight: normal;
+            font-style: normal;
+            text-decoration: none
+        }
+
+        .item {
+            margin: 2px;
+            border-radius: 16px;
+            border: 0.5px solid #dce1e3;
+            height: 46px;
+            text-align: left;
+            vertical-align: top;
+            background-color: white;
+        }
+
+        .col-grid-4 {
+            vertical-align: top;
+            display: inline-block;
+            width: 33%;
+        }
+
+        .col-grid-6 {
+            vertical-align: top;
+            display: inline-block;
+            width: 50.0%;
+        }
+
+        .col-grid-7 {
+            vertical-align: top;
+            display: inline-block;
+            width: 58.33333333333%;
+        }
+
+        .col-grid-8 {
+            vertical-align: top;
+            display: inline-block;
+            width: 66%;
+        }
+
+        .col-grid-12 {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .item-image {
+            display: inline-block;
+        }
+
+        .row {
+            width: 100%;
+        }
+
+        .item-content {
+            vertical-align: top;
+            display: inline-block;
+            margin-left: 16px;
+            padding-top: 3px;
+            height: 100%;
+        }
+
+        .container {
+            margin-top: 4px;
+        }
+
+        .page-container {
+            position:absolute;
+            left:0px;
+            top:0px;
+            width: 795px;
+            height: 1118px;
+        }
+
+        .content-margin {
+            margin-top: 18px;
+            margin-left: 47px;
+            margin-right: 47px;
+        }
+
+        .vertical-text {
+            height: 10px;
+            text-align: center;
+        }
+
+        .border-text {
+            font-size: 9px;
+            color: white;
+            font-style: normal;
+            font-family: "Segoe UI Semibold", serif;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div style="position:absolute;left:0px;top:0px; width: 795px">
+    <img
+            src = "https://ipfs.bevis.sg/ipfs/QmT4xCZppqMu9K6gZjR8MRwDYemFaH6mN22Zf67y2Msw5d"
+            th:src="${ipfsUrl+'QmT4xCZppqMu9K6gZjR8MRwDYemFaH6mN22Zf67y2Msw5d'}"
+            width=795 height=1118>
+</div>
+
+<div style="position:absolute; margin-left: 32px;">
+    <div style="position:absolute; width: 140px;">
+        <img
+                src="https://ipfs.bevis.sg/ipfs/QmRDSiVmRyihqvEY4sXQH1bht9EovJhTrtXJfGEFqyZf8Q"
+                th:src="${ipfsUrl+'QmRDSiVmRyihqvEY4sXQH1bht9EovJhTrtXJfGEFqyZf8Q'}"
+                width=140 >
+    </div>
+    <div style="position:absolute;padding-top: 79px; width: 140px;">
+        <div style="margin: auto; width: 45px;" >
+            <img
+                    src="https://ipfs.bevis.sg/ipfs/QmbbcFL4JAaVgSCZPMDfymKoeYF1EqEB1RhVZTtiqdMYhW"
+                    th:src="${ipfsUrl+'QmbbcFL4JAaVgSCZPMDfymKoeYF1EqEB1RhVZTtiqdMYhW'}"
+                    width=45 >
+        </div>
+    </div>
+    <div style="position:absolute;padding-top: 112px; width: 140px;">
+        <div style="margin: auto; width: 45px; text-align: center" >
+            <span class="sign-text-small" style="padding: 0; line-height: 6px;" th:text="${data.assetId}">p4sq1x</span>
+        </div>
+    </div>
+</div>
+
+<div class="page-container">
+    <div style="text-align: right;padding: 38px;">
+        <div>
+            <p class="sign-text">Date of issue: <span th:text="${data.dateTimeCreated}">2020-03-09 06:07:59</span></p>
+        </div>
+        <div>
+            <p class="sign-text">Asset ID: <span th:text="${data.assetId}">p4sq1x</span></p>
+        </div>
+    </div>
+
+</div>
+
+<div class="page-container">
+    <div style="position: absolute; padding-top: 6px; padding-left: 150px; display: block; " >
+        <span class="border-text" style="  display: block;
+  width: 645px;
+  overflow: hidden;
+  white-space: nowrap;
+  ">
+<!--            p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · -->
+            <span class="border-text"
+                  th:each="i : ${#numbers.sequence( 0, 25)}"
+                  th:text="${data.assetId + ' ' + '·' + ' '}">
+                p4sq1x ·
+            </span>
+        </span>
+    </div>
+    <div style="position: absolute; bottom: 0; padding-bottom: 7px; display: block; " >
+        <span class="border-text" style="  display: block;
+  width: 795px;
+  overflow: hidden;
+  white-space: nowrap;
+  "
+        >
+<!--            <span>p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x · p4sq1x ·</span>-->
+            <span class="border-text"
+                  th:each="i : ${#numbers.sequence( 0, 25)}"
+                  th:text="${data.assetId + ' ' + '·' + ' '}">
+                p4sq1x ·
+            </span>
+        </span>
+    </div>
+
+    <div style="position: absolute; padding-left: 12px; padding-top: 8px" >
+        <div class="vertical-text"
+             th:each="i : ${#numbers.sequence( 0, 107)}">
+            <span class="border-text"
+                  th:with="k=${i % (data.assetId.length() + 1)}"
+                  th:text="${k < data.assetId.length() ? data.assetId.substring(k, k + 1) : '·'}">
+                p
+            </span>
+        </div>
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+
+    </div>
+
+    <div style="position: absolute; right: 0; padding-right: 10px; padding-top: 16px">
+        <div class="vertical-text"
+             th:each="i : ${#numbers.sequence( 0, 107)}">
+            <span class="border-text"
+                  th:with="k=${i % (data.assetId.length() + 1)}"
+                  th:text="${k < data.assetId.length() ? data.assetId.substring(k, k + 1) : '·'}">
+                p
+            </span>
+        </div>
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">q</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">1</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">x</span></div>-->
+        <!--        <div class="vertical-text" style="text-align: center"><span class="border-text">·</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">p</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">4</span></div>-->
+        <!--        <div class="vertical-text"><span class="border-text">s</span></div>-->
+
+    </div>
+</div>
+
+<div class="page-container">
+
+    <!--    Header of Certificate-->
+    <div style="padding-top: 32px;">
+
+        <div style="margin: auto; height: 200px; text-align: center">
+            <img
+                    src="https://ipfs.bevis.sg/ipfs/Qme9m24zFZxqVDzAUAoSTzg2MkLen31G7xrA8WwMSCGBsC"
+                    th:src="${ipfsUrl+'Qme9m24zFZxqVDzAUAoSTzg2MkLen31G7xrA8WwMSCGBsC'}"
+                    height="200">
+        </div>
+
+        <div style="text-align: center; margin-top: -32px;">
+            <span class="certificate-label">CERTIFICATE</span>
+        </div>
+
+        <div >
+            <hr style="color: #dce1e3; width: 400px;">
+        </div>
+        <div style="text-align: center; margin-top: 6px">
+            <span class="item-label">Asset ID:</span>
+        </div>
+        <div style="text-align: center; ">
+            <span class="asset-value" th:text="${data.assetId}">p4sq1x</span>
+        </div>
+
+        <div style="margin-top: 4px;">
+            <hr style="color: #dce1e3; width: 400px;">
+        </div>
+        <div style="text-align: center;" >
+            <span class="sign-text">Blockchain Enabled Verification & Information Service</span>
+        </div>
+    </div>
+
+    <!--Main list container-->
+    <div class="content-margin">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-4">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/Qme6zzzjrvaU7kgPX5ttar2wZWPR9KJ6MYgsqbGQwtKjxX"
+                                        th:src="${ipfsUrl+'Qme6zzzjrvaU7kgPX5ttar2wZWPR9KJ6MYgsqbGQwtKjxX'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Document Format:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.documentFormat}">.PDF</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-grid-8">
+                    <div class="item">
+                        <div class="item-image">
+                            <img
+                                    src="https://ipfs.bevis.sg/ipfs/QmY7hVz2kUZ1xJuqKjwFagiCuQCvNxNFck3WZaJkwZbNUo"
+                                    th:src="${ipfsUrl+'QmY7hVz2kUZ1xJuqKjwFagiCuQCvNxNFck3WZaJkwZbNUo'}"
+                                    width="48" height="48" style="object-fit: contain;">
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">IP Address:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.ipAddress}">192.168.9.122</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-4">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmfHD5qu8GMMh9eNUBKkG59ZQHWEPCQmRY5zvFyFSBnxjH"
+                                        th:src="${ipfsUrl+'QmfHD5qu8GMMh9eNUBKkG59ZQHWEPCQmRY5zvFyFSBnxjH'}"
+                                        width="48" height="48"  style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Blockchain:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.blockchain}">ETH</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-grid-8">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmRAjzwTsdkADcfx63Je7GkgVtHYkA3mLFrjMsMVmPuEdy"
+                                        th:src="${ipfsUrl+'QmRAjzwTsdkADcfx63Je7GkgVtHYkA3mLFrjMsMVmPuEdy'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Country:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.country}">Singapore</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-4">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmXuE1VGEEQLzUCFY4rmLs9zyvVE7r6CYgz2r7Y4G28j6J"
+                                        th:src="${ipfsUrl+'QmXuE1VGEEQLzUCFY4rmLs9zyvVE7r6CYgz2r7Y4G28j6J'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">File size:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.fileSize}">1,2 Mb (1234 bytes)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-grid-8">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmRAjzwTsdkADcfx63Je7GkgVtHYkA3mLFrjMsMVmPuEdy"
+                                        th:src="${ipfsUrl+'QmRAjzwTsdkADcfx63Je7GkgVtHYkA3mLFrjMsMVmPuEdy'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">City / State:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.cityName}">Cityname</span>
+                                    <span class="item-value" th:if="${data.cityName != null && data.stateName != null}" >/</span>
+                                    <span class="item-value" th:text="${data.stateName}">Statename</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-4">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmTix4WgPCpdWVpCVNXEMZZDqpKNF2req8fMAj6zoRnV65"
+                                        th:src="${ipfsUrl+'QmTix4WgPCpdWVpCVNXEMZZDqpKNF2req8fMAj6zoRnV65'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Cost (Units):</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.costInUnits}">110 U</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-grid-8">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmZSNfzVZnfMG2CiDWPQEFY7N1S3E435WjiGQi2UpcESyM"
+                                        th:src="${ipfsUrl+'QmZSNfzVZnfMG2CiDWPQEFY7N1S3E435WjiGQi2UpcESyM'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Brand / Model / Device ID:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.phoneBrand}">Samsung</span>
+                                    <span class="item-value" >/</span>
+                                    <span class="item-value" th:text="${data.phoneModel}">SM-J810Y</span>
+                                    <span class="item-value" >/</span>
+                                    <span class="item-value" th:text="${data.deviceId}">316B0841-9B9F-4BD9-9D79-236089693714</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-4">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmRUeQNrVsK4FbhMcckNg3LsufmzJXCc618ZVnkTC1UL7o"
+                                        th:src="${ipfsUrl+'QmRUeQNrVsK4FbhMcckNg3LsufmzJXCc618ZVnkTC1UL7o'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Date/Time created:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.dateTimeCreated}">2020-03-09 06:07:59</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-grid-8">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmfP1BHuSLJ6RZeuf4qajZ3SMpE2y9dUH7K61HaWAKhFjK"
+                                        th:src="${ipfsUrl+'QmfP1BHuSLJ6RZeuf4qajZ3SMpE2y9dUH7K61HaWAKhFjK'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">GPS:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.gps}">1.21212121,2.1231231231</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-4">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmYRFMsxypB5xpmqoHvjZksvuKT28Hzu2KnzRtBKZkj4xt"
+                                        th:src="${ipfsUrl+'QmYRFMsxypB5xpmqoHvjZksvuKT28Hzu2KnzRtBKZkj4xt'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Operating System:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.operatingSystem}">Android</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-grid-8">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmWUjFGNXxyF9jPM6m8NzVEdXBdwa3CbfMd9THfmmVzTD7"
+                                        th:src="${ipfsUrl+'QmWUjFGNXxyF9jPM6m8NzVEdXBdwa3CbfMd9THfmmVzTD7'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">User e-mail:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.userEmail}">exampleemailadress@example.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-12">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmYTxSzH27X3wjeZmYi3Xqvu16qDyQZnSQimcEZSqYLZX1"
+                                        th:src="${ipfsUrl+'QmYTxSzH27X3wjeZmYi3Xqvu16qDyQZnSQimcEZSqYLZX1'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Public Key:</span>
+                                </div>
+                                <div>
+                                    <span class="item-value" th:text="${data.publicKey}">XDBGD-06x194_XDBGD-06x19445=asROXDBGD-06x194</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-12">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmSPSSQDhnMwaCf463WPbzvRt7m4R4rx7qDNCttq94Evmc"
+                                        th:src="${ipfsUrl+'QmSPSSQDhnMwaCf463WPbzvRt7m4R4rx7qDNCttq94Evmc'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">Transaction ID:</span>
+                                </div>
+                                <div>
+                                    <a th:href="${data.transactionIdLink}" href="http://www.google.com" target="_blank" style="display: inline-block; text-decoration: none;">
+                                        <span class="item-value" th:text="${data.transactionId}">XDBGD-06x194_XDBGD-06x19445=asROXDBGD-06x194</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-grid-12">
+                    <div class="item">
+                        <div class="item-image">
+                            <div>
+                                <img
+                                        src="https://ipfs.bevis.sg/ipfs/QmdcBFhMzLtRz2PYhdWJurC2k8WmvmGHtX3uznsdEtSGQZ"
+                                        th:src="${ipfsUrl+'QmdcBFhMzLtRz2PYhdWJurC2k8WmvmGHtX3uznsdEtSGQZ'}"
+                                        width="48" height="48" style="object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="item-content">
+                            <div>
+                                <div>
+                                    <span class="item-label">IPFS CID:</span>
+                                </div>
+                                <div>
+                                    <a th:href="${data.ipfsCidLink}" href="https://www.google.com" target="_blank" style="display: block; text-decoration: none;">
+                                        <span class="item-value" th:text="${data.ipfsCid}">XDBGD-06x194_XDBGD-06x19445=asROXDBGD-06x194</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<div class="page-container">
+    <div style="position: absolute;
+    bottom: 48px; width: 100%;">
+        <div style="text-align: center;">
+            <span class="item-value-large">www.bevis.sg</span>
+        </div>
+        <div style="margin-top: 4px; text-align: center;">
+            <img width="50"
+                 src="https://ipfs.bevis.sg/ipfs/QmbbcFL4JAaVgSCZPMDfymKoeYF1EqEB1RhVZTtiqdMYhW"
+                 th:src="${ipfsUrl+'QmbbcFL4JAaVgSCZPMDfymKoeYF1EqEB1RhVZTtiqdMYhW'}"
+            >
+        </div>
+        <div style="text-align: center;">
+            <span class="footer-text" style="vertical-align: baseline;">The Asset ID can be verified at bevis.sg/verify to check authenticity of this certificate</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
