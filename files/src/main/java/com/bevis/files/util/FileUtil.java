@@ -2,6 +2,7 @@ package com.bevis.files.util;
 
 import com.bevis.files.dto.File;
 import com.bevis.files.exception.FileException;
+import io.github.pixee.security.Filenames;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -41,7 +42,7 @@ public class FileUtil {
 
     public static File createTempFile(MultipartFile multipartFile) {
         try {
-            java.io.File uploadedFile = java.io.File.createTempFile("file_", getFileExtension(multipartFile.getOriginalFilename()));
+            java.io.File uploadedFile = java.io.File.createTempFile("file_", getFileExtension(Filenames.toSimpleFileName(multipartFile.getOriginalFilename())));
             uploadedFile.deleteOnExit();
             FileUtil.upload(multipartFile, uploadedFile);
             return File.builder()
@@ -56,7 +57,7 @@ public class FileUtil {
 
     public static File createEncryptedFile(MultipartFile multipartFile, String password) {
         try {
-            java.io.File uploadedFile = java.io.File.createTempFile("file_", getFileExtension(multipartFile.getOriginalFilename()));
+            java.io.File uploadedFile = java.io.File.createTempFile("file_", getFileExtension(Filenames.toSimpleFileName(multipartFile.getOriginalFilename())));
             FileUtil.upload(multipartFile, uploadedFile);
 
             java.io.File encryptedFile = generateTmpPath("file_", ".zip").toFile();
@@ -65,7 +66,7 @@ public class FileUtil {
             ZipEncryptUtil.encryptWithPassword(uploadedFile, encryptedFile, password);
             uploadedFile.delete();
             return File.builder()
-                    .fileName(multipartFile.getOriginalFilename() + ".zip")
+                    .fileName(Filenames.toSimpleFileName(multipartFile.getOriginalFilename()) + ".zip")
                     .file(encryptedFile)
                     .build();
         } catch (Exception e) {
