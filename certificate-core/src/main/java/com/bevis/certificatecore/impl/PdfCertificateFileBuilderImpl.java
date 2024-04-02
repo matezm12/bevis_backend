@@ -4,6 +4,7 @@ import com.bevis.certificatecore.EmailCertAttachmentBuilder;
 import com.bevis.certificatecore.exception.CertificateException;
 import com.bevis.pdf.PdfRenderer;
 import com.bevis.resources.ResourcePathLoader;
+import java.nio.file.Files;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -49,7 +50,7 @@ class PdfCertificateFileBuilderImpl implements EmailCertAttachmentBuilder {
     }
 
     private File renderFile(String renderedHtmlContent) throws IOException {
-        File certificate = File.createTempFile("certificate", ".pdf");
+        File certificate = Files.createTempFile("certificate", ".pdf").toFile();
         try (OutputStream fileStream = new FileOutputStream(certificate)){
             String resourcesFolder = getAbsoluteResourcesFolder();
             log.debug("Certificate resources folder: {}", resourcesFolder);
