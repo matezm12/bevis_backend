@@ -2,6 +2,7 @@ package com.bevis.certificatecore.impl;
 
 import com.bevis.certificatecore.CertificateFileBuilder;
 import com.bevis.certificatecore.exception.CertificateException;
+import java.nio.file.Files;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -32,7 +33,7 @@ class HtmlCertificateFileBuilderImpl implements CertificateFileBuilder {
 
     private File build(Object certificateData, String template) {
         try {
-            File certificate = File.createTempFile("certificate", ".htm");
+            File certificate = Files.createTempFile("certificate", ".htm").toFile();
             String renderedHtmlContent = generateCertificateHtml(certificateData, template);
             FileUtils.writeStringToFile(certificate, renderedHtmlContent, Charset.defaultCharset());
             return certificate;
