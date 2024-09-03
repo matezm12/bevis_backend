@@ -1,5 +1,6 @@
 package com.bevis.common.util;
 
+import io.github.pixee.security.Newlines;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,7 @@ public class FileDownloader {
 
     public void download(InputStream inputStream, HttpServletResponse response) throws IOException {
         response.setContentType(contentType);
-        response.setHeader("Content-Disposition", "inline; filename=" + fileName);
+        response.setHeader("Content-Disposition", Newlines.stripAll("inline; filename=" + fileName));
         headers.forEach(response::addHeader);
         response.setContentLength(contentLength);
         IOUtils.copy(inputStream, response.getOutputStream());
