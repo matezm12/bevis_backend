@@ -6,6 +6,7 @@ import com.bevis.assetimport.dto.ImportWrappingDTO;
 import com.bevis.config.ConfigKey;
 import com.bevis.config.ConfigService;
 import com.bevis.master.domain.Master;
+import java.nio.file.Files;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
@@ -40,7 +41,7 @@ public class CodeReadrImportEventHandlerImpl implements CodeReadrImportEventHand
             String assetIdsData = masters.stream().map(Master::getId)
                     .collect(Collectors.joining("\n")) + '\n';
             String date = convertInstantToDateString(importWrappingDTO.getDynamicAssetImport().getScanTime());
-            File file = File.createTempFile("file_", "_" + date + ".txt");
+            File file = Files.createTempFile("file_", "_" + date + ".txt").toFile();
             FileUtils.writeStringToFile(file, assetIdsData, Charset.defaultCharset());
             Map<String, String> data = prepareNotificationData(importWrappingDTO, receivers);
             codeReaderNotificationSender.sendCodeReaderNotification(data, file, Arrays.asList(receivers));
