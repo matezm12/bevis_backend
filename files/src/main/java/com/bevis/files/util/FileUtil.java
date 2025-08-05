@@ -2,6 +2,7 @@ package com.bevis.files.util;
 
 import com.bevis.files.dto.File;
 import com.bevis.files.exception.FileException;
+import java.security.SecureRandom;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -102,7 +103,7 @@ public class FileUtil {
     }
 
     private static Path generatePath(String prefix, String suffix, Path dir) {
-        Random random = new Random();
+        Random random = new SecureRandom();
         long n = random.nextLong();
         String s = prefix + Long.toUnsignedString(n) + suffix;
         Path name = dir.getFileSystem().getPath(s);
